@@ -52,7 +52,7 @@ Criptarea simetrică utilizează **aceeași cheie** atât pentru criptare, cât 
 
 **Dezavantajul principal**: ambele părți trebuie să dețină aceeași cheie secretă, iar distribuirea ei securizată poate fi o provocare.
 
-![Symmetric encryption](/img/symmetric.png)
+![Symmetric encryption](/2026/Cybersecurity/img/symmetric.png)
 
 ### AES (Advanced Encryption Standard)
 
@@ -133,7 +133,7 @@ Analogie simplă: imaginează-ți o cutie poștală cu o fantă (cheia publică 
 
 Criptarea asimetrică rezolvă **problema distribuției cheilor** din criptarea simetrică, dar este mult mai lentă computațional. De aceea, în practică se folosesc **scheme hibride**: cheia simetrică este generată aleatoriu și criptată cu RSA, iar datele propriu-zise sunt criptate cu AES.
 
-![Asymmetric encryption](/img/asymmetric.png)
+![Asymmetric encryption](/2026/Cybersecurity//img/asymmetric.png)
 
 ### RSA (Rivest-Shamir-Adleman)
 
@@ -221,7 +221,7 @@ Semnăturile digitale sunt utilizate pentru a verifica **autenticitatea** și **
 2. Hash-ul este **criptat cu cheia privată** a semnatarului → aceasta este semnătura
 3. Oricine poate **verifica** semnătura folosind cheia publică a semnatarului
 
-![Digital Signatures](/img/signature.png)
+![Digital Signatures](/2026/Cybersecurity//img/signature.png)
 
 ### ECDSA (Elliptic Curve Digital Signature Algorithm)
 
