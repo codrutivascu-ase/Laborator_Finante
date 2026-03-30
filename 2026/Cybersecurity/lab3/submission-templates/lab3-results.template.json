@@ -1,0 +1,9 @@
+{
+  "studentNumber": 0,
+  "instanceId": "lab3-000-EXAMPLE",
+  "challengeProfile": "profile_example",
+  "challengeInjectionType": "union_parse_example",
+  "usedPayload": "",
+  "exampleDynamicField": "",
+  "blockedPayloadAfterFix": ""
+}
