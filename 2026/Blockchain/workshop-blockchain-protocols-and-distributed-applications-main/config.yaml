@@ -1,0 +1,168 @@
+stages:
+  # - make_assets
+  # - embed_reveal
+  - docusaurus
+
+build_dir: /build
+output_type: last
+output_dir: /output
+
+make_assets:
+  plugin: command
+  options:
+    command: make
+    locations:
+      # - chapters/introduction/lecture
+      # - chapters/protocol/lecture
+      # - chapters/case-study/lecture/slides
+      # - chapters/wallet/lecture/slides
+      # - chapters/vm/lecture
+      # - chapters/smart-contracts/lecture
+      # - chapters/security/lecture
+      # - chapters/dApps/lecture
+      # - chapters/composability/lecture
+    args:
+      - all
+
+embed_reveal:
+  plugin: reveal_embed
+  options:
+    target: docusaurus
+    extension: mdx
+    build:
+      # Introduction: slides/Introduction
+      # Protocol: slides/protocol
+      # Case-Study: slides/case-study
+      # Wallet: slides/wallet
+      # VM: slides/vm
+      # Smart-Contracts: slides/smart-contracts
+      # Security: slides/security
+      # Dapps: slides/dApps
+      # Composability: slides/composability
+
+docusaurus:
+  plugin: docusaurus
+  options:
+    course_name: Blockchain Protocols and Distributed Applications
+    sidebar: js
+    structure:
+      - Introduction: chapters/README.md
+        # - Lectures:
+        # - Introduction: /build/embed_reveal/Introduction/Introduction.mdx
+        # - Blockchain Protocols: Blockchain-Protocols/Blockchain-Protocols.mdx
+        # - Case Study: Case-Study/Case-Study.mdx
+        # - Wallet: Wallet/Wallet.mdx
+        # - Virtual Machine: Virtual-Machine/Virtual-Machine.mdx
+        # - Smart Contracts: Smart-Contracts/Smart-Contracts.mdx
+        # - Security: Security/Security.mdx
+        # - Scaling dApps: Scaling-dApps/Scaling-dApps.mdx
+        # - Composability: Composability/Composability.mdx
+      - Practical Sessions:
+          - Exploring MetaMask:
+              path: chapters/introduction/lab/content/wallet
+              extra:
+                - ../../media/
+                # - ../../quiz/
+              subsections:
+                - Intro & Installing MetaMask/: metamask.md
+                - Metamask Network Config/: metamask_config_networks.md
+                - Metamask Transaction/: metamask_transaction.md
+          - Explorer:
+              path: chapters/introduction/lab/content/explorer
+              extra:
+                - ../../media/
+                # - ../../quiz/
+              subsections:
+                - Time in Blockchain/: time.md
+                - Blocks/: blocks.md
+                - Block Leader/: leader.md
+                # - Consensus Grup/: consensus.md
+                - Transactions/: transactions.md
+                - Blockchain Validators/: validators.md
+                # - Blockchain Observers/: observers.md
+                - Devnet Blockchains/: devnet_testnet.md
+          - Tokens:
+              path: chapters/tokens/lab/content
+              subsections:
+                - Standards: standards.md
+                - Fungible & NonFugible Tokens: fungible-non-fungible.md
+                - Ethereum Testnet Fungible Token: mint_tokens_testnet_eth.md
+                - Ethereum Fungible Token: mint_tokens_eth.md
+                - MultiversX Fungible Token: fungible.md
+                - MultiversX NFT: non-fungible.md
+              extra:
+                - ../media/
+          - DeFi:
+              path: chapters/money/lab/content/
+              extra:
+                - ../media/
+              subsections:
+                - Liquidity Pools Intro: liquidity_pools.md
+                - Liquidity Pools Use Cases: liquidity_pools_use_cases.md
+                - Liquidity Pool Ethereum: lp_eth.md
+                - Swap Ethereum Tokens: swap_eth.md
+                - Bridge: bridge_eth.md
+                - Lending Assets: lend_eth.md
+                - Borrowing Assets: borrow_eth.md
+                # - Swap MultiversX Tokens: swap_mvx.md
+                # - MultiversX ESDT Tokens: mint_tokens_mvx.md
+          - MultiversX Wallet (Optional):
+              path: chapters/introduction/lab/content/wallet
+              extra:
+                - ../../media/
+              subsections:
+                - Wallet/: wallet.md
+                - Access & Faucet: faucet.md
+                - Send Transaction: send_tx.md
+                - Browser Web Wallet (Optional): browser_wallet.md
+          # - Smart Contracts:
+          #     path: chapters/smart-contracts/lab/content
+          #     subsections:
+          #       - Prerequisites: prerequisites.md
+          #       - Empty SC: empty.md
+          #       - Empty Interactor: rust_interactors.md
+          #       - Adder SC: adder.md
+          #       - Rust Deploy SC: cargo_deploy.md
+          #       - Mxpy Deploy SC: mxpy_deploy.md
+          #       - Mxpy Call SC: mxpy_sc_call.md
+          #       - Neversea SC: neversea.md
+          #     extra:
+          #       - ../media/
+          # - MultiversX Env Setup:
+          #     path: chapters/introduction/lab/content/setup
+          #     subsections:
+          #       - Setting up the Lab Environment: setup.md
+          # - Learning Rust:
+          #     path: chapters/rust/content
+          #     subsections:
+          #       - Objectives: rust.md
+          #       - Tour of Rust: tour-of-rust.md
+          #       - CryptoZombies: cryptozombies.md
+          # - Decentralized Applications:
+          #     path: chapters/dApps/lab/content/
+          #     extra:
+          #       - ../media/
+          #     subsections:
+          #       - Building your first dApp: dApp.md
+          # - Smart Contract Events:
+          #     path: chapters/smart-contracts/lab/content/
+          #     subsections:
+          #       - SC Events: events.md
+          #     extra:
+          #       - ../media/
+      - Challenges:
+          path: chapters/ctf/
+          subsections:
+            - Tasks: workshop.md
+            - Bonus: multiversx_wallet.md
+      - Grading: util/grading.md
+      - Resources: util/resources.md
+    config_meta:
+      title: Blockchain Protocols and Distributed Applications
+      url: http://costincarabas.github.io/
+      baseUrl: /workshop-blockchain-protocols-and-distributed-applications/
+      onBrokenLinks: warn
+      onBrokenMarkdownLinks: warn
+    config_socials:
+      Main site: https://github.com/cs-pub-ro/workshop-blockchain-protocols-and-distributed-applications
+    copyright_string: (C) 2026 Costin Carabas, Bianca-Elena Ialangi, Sorin Petreasca
